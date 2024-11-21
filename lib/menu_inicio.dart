@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math/ActividadesMatematicas.dart';
 import 'package:math/videos.dart';
 //import 'package:video_player/video_player.dart';
 
@@ -62,6 +63,12 @@ class _MenuInicioState extends State<MenuInicio> {
                 icon: Icons.calculate,
                 onPressed: () {
                   // Acción para "Actividades Matemáticas"
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ActividadesMatematicas(),
+                    ),
+                  );
                 },
                 isHovering: _isHoveringMath,
                 onHover: (hovering) {
