@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:math/videos.dart';
+//import 'package:video_player/video_player.dart';
 
 class MenuInicio extends StatefulWidget {
   const MenuInicio({super.key});
@@ -16,7 +18,26 @@ class _MenuInicioState extends State<MenuInicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Inicio')),
+      appBar: AppBar(
+        automaticallyImplyLeading: false, // Quitar la flecha de retroceso
+        elevation: 0, // Quitar el sombreado
+        backgroundColor: const Color(0xff89375F), // Mismo color que los botones
+        centerTitle: true, // Centrar el texto del AppBar
+        actions: [
+          TextButton.icon(
+            onPressed: () {
+              // Lógica para cerrar sesión
+              Navigator.of(context)
+                  .pop(); // Ejemplo: salir de la pantalla actual
+            },
+            icon: const Icon(Icons.logout, color: Colors.white),
+            label: const Text(
+              "Cerrar sesión",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -71,6 +92,12 @@ class _MenuInicioState extends State<MenuInicio> {
                 icon: Icons.video_library,
                 onPressed: () {
                   // Acción para "Tutoriales en Video"
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VideoListScreen(),
+                    ),
+                  );
                 },
                 isHovering: _isHoveringTutorials,
                 onHover: (hovering) {

@@ -33,7 +33,7 @@ class _LoginState extends State<Login> {
                   children: [
                     //Logo de la app
                     Image.asset(
-                      'assets/logo_sinFondo.png',
+                      'assets/logo1.png',
                       width: 150,
                       height: 150,
                     ),
