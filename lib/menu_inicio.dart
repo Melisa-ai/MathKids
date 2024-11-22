@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math/ActividadesMatematicas.dart';
+import 'package:math/Minijuegos.dart';
 import 'package:math/videos.dart';
 //import 'package:video_player/video_player.dart';
 
@@ -25,6 +26,18 @@ class _MenuInicioState extends State<MenuInicio> {
         backgroundColor: const Color(0xff89375F), // Mismo color que los botones
         centerTitle: true, // Centrar el texto del AppBar
         actions: [
+          // Botón de Iniciar suscripción premium
+          TextButton(
+            onPressed: () {
+              // Navegar a una página de suscripción o mostrar un diálogo
+              print("Iniciar suscripción premium");
+            },
+            child: const Text(
+              "Iniciar suscripción premium",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          const SizedBox(width: 20), // Espacio para separar el texto y el icono
           TextButton.icon(
             onPressed: () {
               // Lógica para cerrar sesión
@@ -84,6 +97,12 @@ class _MenuInicioState extends State<MenuInicio> {
                 icon: Icons.videogame_asset,
                 onPressed: () {
                   // Acción para "Minijuegos"
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MinijuegosScreen(),
+                    ),
+                  );
                 },
                 isHovering: _isHoveringGames,
                 onHover: (hovering) {

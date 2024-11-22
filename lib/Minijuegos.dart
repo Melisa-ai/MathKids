@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:math/ActividadMultiplicacion.dart';
-import 'package:math/ActividadResta.dart';
-import 'package:math/ActividadSuma.dart';
-import 'package:math/OperacionesBasicas.dart';
 
-class ActividadesMatematicas extends StatelessWidget {
+class MinijuegosScreen extends StatelessWidget {
+  final List<Map<String, String>> juegos = [
+    {
+      'title': 'Juego 1: Suma de Números',
+      'route': '/juego1',
+      'gif': 'assets/suma.gif'
+    },
+    {
+      'title': 'Juego 2: Multiplicación Rápida',
+      'route': '/juego2',
+      'gif': 'assets/Multiplicacion.gif'
+    },
+    {
+      'title': 'Juego 3: Rompecabezas de Matemáticas',
+      'route': '/juego3',
+      'gif': 'assets/rompecabezas.gif'
+    },
+    {
+      'title': 'Juego 4: Resta Rápida',
+      'route': '/juego4',
+      'gif': 'assets/resta.gif'
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Actividades Matemáticas'),
+        title: const Text('Minijuegos Matemáticos'),
         backgroundColor: const Color.fromARGB(255, 255, 98, 41),
       ),
       body: Container(
@@ -32,52 +51,32 @@ class ActividadesMatematicas extends StatelessWidget {
           mainAxisSpacing: 20.0, // Espaciado vertical entre botones
           padding: const EdgeInsets.all(20.0),
           children: [
-            ActivityButton(
-              title: 'Suma de fracciones',
-              backgroundImage: 'assets/fondo_suma.png',
+            MinijuegoButton(
+              title: 'Suma de Números',
+              backgroundImage: 'assets/suma.gif',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FractionAdditionActivity(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/juego1');
               },
             ),
-            ActivityButton(
-              title: 'Resta de fracciones',
-              backgroundImage: 'assets/fondo_resta.png',
+            MinijuegoButton(
+              title: 'Multiplicación Rápida',
+              backgroundImage: 'assets/Multiplicacion.gif',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FractionSubtractionActivity(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/juego2');
               },
             ),
-            ActivityButton(
-              title: 'Multiplicación de fracciones',
-              backgroundImage: 'assets/fondo_multiplicacion.png',
+            MinijuegoButton(
+              title: 'Rompecabezas de Matemáticas',
+              backgroundImage: 'assets/rompecabezas.gif',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ActividadMultiplicacion(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/juego3');
               },
             ),
-            ActivityButton(
-              title: 'Operaciones básicas',
-              backgroundImage: 'assets/fondo_operaciones.png',
+            MinijuegoButton(
+              title: 'Resta Rápida',
+              backgroundImage: 'assets/resta.gif',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OperacionesBasicas(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/juego4');
               },
             ),
           ],
@@ -87,12 +86,12 @@ class ActividadesMatematicas extends StatelessWidget {
   }
 }
 
-class ActivityButton extends StatelessWidget {
+class MinijuegoButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final String backgroundImage;
 
-  const ActivityButton({
+  const MinijuegoButton({
     required this.title,
     required this.onPressed,
     required this.backgroundImage,
@@ -113,7 +112,7 @@ class ActivityButton extends StatelessWidget {
             ),
           ],
           image: DecorationImage(
-            image: AssetImage(backgroundImage),
+            image: AssetImage(backgroundImage), // GIF como fondo
             fit: BoxFit.cover, // Ajusta la imagen al contenedor
           ),
         ),

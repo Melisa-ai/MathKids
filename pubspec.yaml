@@ -32,3 +32,11 @@ flutter:
     - assets/logo_sinFondo.png
     - assets/bien.png
     - assets/mal.png
+    - assets/fondo_suma.png
+    - assets/fondo_resta.png
+    - assets/fondo_multiplicacion.png
+    - assets/fondo_operaciones.png
+    - assets/suma.gif
+    - assets/Multiplicacion.gif
+    - assets/rompecabezas.gif
+    - assets/resta.gif

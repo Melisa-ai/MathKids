@@ -34,8 +34,8 @@ class _LoginState extends State<Login> {
                     //Logo de la app
                     Image.asset(
                       'assets/logo_sinFondo.png', //PONER LA IMAGEN DEL LOGO 1
-                      width: 150,
-                      height: 150,
+                      width: 250,
+                      height: 250,
                     ),
                     const SizedBox(height: 20),
 

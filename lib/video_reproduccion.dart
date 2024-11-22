@@ -5,18 +5,21 @@ class VideoListScreen extends StatelessWidget {
   final List<Map<String, String>> videos = [
     {
       'title': 'Video 1: Introducción a las matemáticas',
-      'url': 'https://www.youtube.com/watch?v=c9cTIjBqFTw'
+      'url': 'https://youtu.be/M05xtGQoUeg?si=6gYB7B3mrimgjQHm'
     },
     {
       'title': 'Video 2: Sumas y restas',
-      'url': 'https://www.youtube.com/watch?v=2fZgR6JYov4'
+      'url': 'https://www.youtube.com/watch?v=c9cTIjBqFTw'
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tutoriales en Video')),
+      appBar: AppBar(
+        title: const Text('Actividades Matemáticas'),
+        backgroundColor: const Color.fromARGB(255, 255, 98, 41),
+      ),
       body: ListView.builder(
         itemCount: videos.length,
         itemBuilder: (context, index) {
